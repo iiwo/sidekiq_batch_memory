@@ -9,9 +9,14 @@ install gems
 bundle install
 ```
 
-run sidekiq test
+run system memory profiling
 ```shell
-NUMBER_OF_JOBS=100000 bundle exec sidekiq -c 1 -r ./test_mem.rb -q test_queue
+SYSTEM_MEMORY=true NUMBER_OF_JOBS=100000 bundle exec sidekiq -c 1 -r ./test_mem.rb -q test_queue
+```
+
+run memory profiling
+```shell
+MEMORY_PROFILER=true NUMBER_OF_JOBS=100000 bundle exec sidekiq -c 1 -r ./test_mem.rb -q test_queue
 ```
 
 ### Results
@@ -35,8 +40,7 @@ batch.jobs do
 end
 ```
 
-![Screen Shot 2021-01-04 at 5 04 31 PM](https://user-images.githubusercontent.com/994762/103555380-750e1580-4eb0-11eb-8d9d-8c3732757485.png)
-
+![Screen Shot 2021-01-04 at 9 45 59 PM](https://user-images.githubusercontent.com/994762/103578304-9aae1580-4ed6-11eb-9523-c4d9d0333cf7.png)
 
 ### Related read
 https://github.com/mperham/sidekiq/wiki/Batches
