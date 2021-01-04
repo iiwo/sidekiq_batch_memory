@@ -1,0 +1,754 @@
+Total allocated: 3955694309 bytes (9602745 objects)
+Total retained:  2096126 bytes (733 objects)
+
+allocated memory by gem
+-----------------------------------
+3582154808  redis-4.2.5
+ 129607669  sidekiq-6.0.5
+ 122029838  json
+  76826880  monitor
+  25839487  sidekiq-pro-5.0.1
+  12000248  securerandom
+   7201883  other
+     21192  connection_pool-2.2.3
+     12096  csv
+       208  time
+
+allocated memory by file
+-----------------------------------
+3368549244  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/ruby.rb
+ 166582404  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb
+ 122029838  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/json/common.rb
+  76826880  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/monitor.rb
+  67600000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/client.rb
+  37414616  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/pipeline.rb
+  31200000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/worker.rb
+  28000000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/middleware/chain.rb
+  25839487  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-pro-5.0.1/lib/sidekiq/batch.rb
+  12000248  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb
+   8007368  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis.rb
+   4088472  /Users/iiwo/src/oneoff/memory_bloat_script/test_mem.rb
+   3113411  <internal:prelude>
+   2801051  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/logger.rb
+   1601176  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/client.rb
+     14464  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/connection_pool-2.2.3/lib/connection_pool.rb
+     12096  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/csv/writer.rb
+      6728  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/connection_pool-2.2.3/lib/connection_pool/timed_stack.rb
+      4212  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/launcher.rb
+      1424  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/api.rb
+       696  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/processor.rb
+       286  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/scheduled.rb
+       208  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/time.rb
+
+allocated memory by location
+-----------------------------------
+3323832203  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/ruby.rb:48
+  99628942  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/json/common.rb:224
+  44239964  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:29
+  42313760  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:9
+  40017760  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:20
+  38413440  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/monitor.rb:233
+  38413440  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/monitor.rb:237
+  32010560  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/ruby.rb:379
+  23794707  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-pro-5.0.1/lib/sidekiq/batch.rb:305
+  23200000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/client.rb:237
+  23200000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/worker.rb:200
+  22404376  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/pipeline.rb:41
+  22400896  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/json/common.rb:212
+  16006000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:25
+  16000000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:15
+  16000000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/middleware/chain.rb:136
+   8600000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/client.rb:203
+   8600000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/client.rb:242
+   8004920  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:19
+   8002520  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/ruby.rb:401
+   8000000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/client.rb:239
+   8000000  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb:159
+   7200000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/client.rb:213
+   4000160  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis.rb:1384
+   4000040  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb:106
+   4000040  /Users/iiwo/src/oneoff/memory_bloat_script/test_mem.rb:49
+   4000000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis.rb:1136
+   4000000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/client.rb:204
+   4000000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/client.rb:209
+   4000000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/client.rb:74
+   4000000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/middleware/chain.rb:125
+   4000000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/middleware/chain.rb:135
+   4000000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/middleware/chain.rb:156
+   4000000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/worker.rb:239
+   4000000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/worker.rb:243
+   3113411  <internal:prelude>:73
+   3101249  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/ruby.rb:94
+   2800232  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/logger.rb:138
+   2401784  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/pipeline.rb:115
+   2300816  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/pipeline.rb:76
+   2299872  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/pipeline.rb:14
+   1602304  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/pipeline.rb:113
+   1602048  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/pipeline.rb:121
+   1600952  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/ruby.rb:421
+   1600936  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/client.rb:197
+   1600856  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/pipeline.rb:123
+   1600792  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/pipeline.rb:58
+   1600792  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/pipeline.rb:62
+   1021592  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-pro-5.0.1/lib/sidekiq/batch.rb:197
+   1021592  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-pro-5.0.1/lib/sidekiq/batch.rb:227
+
+allocated memory by class
+-----------------------------------
+3630223977  String
+ 123262456  Hash
+ 116184048  Array
+  24001280  Proc
+  22400896  JSON::Ext::Generator::State
+  17200860  Time
+  14403816  Redis::Future
+   4000040  Sidekiq::Client
+   4000000  Sidekiq::Batch::Client
+     11760  MatchData
+      1792  Enumerator
+      1680  Process::Status
+       576  Redis::Pipeline::Multi
+       440  Range
+       296  Thread::Backtrace
+       152  Redis::Pipeline
+       120  Sidekiq::Batch
+        80  Sidekiq::ProcessSet
+        40  ConnectionPool::TimeoutError
+
+allocated objects by gem
+-----------------------------------
+   5101333  redis-4.2.5
+   1900044  json
+   1700092  sidekiq-6.0.5
+    400140  monitor
+    300003  securerandom
+    100842  other
+    100021  sidekiq-pro-5.0.1
+       168  csv
+        98  connection_pool-2.2.3
+         4  time
+
+allocated objects by file
+-----------------------------------
+   2400867  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb
+   2200150  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/ruby.rb
+   1900044  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/json/common.rb
+    900000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/client.rb
+    500000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/middleware/chain.rb
+    400140  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/monitor.rb
+    300198  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/pipeline.rb
+    300003  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb
+    300000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/worker.rb
+    200102  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis.rb
+    100632  /Users/iiwo/src/oneoff/memory_bloat_script/test_mem.rb
+    100021  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-pro-5.0.1/lib/sidekiq/batch.rb
+       210  <internal:prelude>
+       168  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/csv/writer.rb
+        67  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/connection_pool-2.2.3/lib/connection_pool.rb
+        60  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/launcher.rb
+        31  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/connection_pool-2.2.3/lib/connection_pool/timed_stack.rb
+        16  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/client.rb
+        12  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/api.rb
+        11  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/logger.rb
+         6  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/scheduled.rb
+         4  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/time.rb
+         3  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/processor.rb
+
+allocated objects by location
+-----------------------------------
+   1800040  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/json/common.rb:224
+   1199751  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/ruby.rb:48
+   1000444  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:20
+    800264  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/ruby.rb:379
+    400150  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:25
+    400000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:15
+    300060  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/pipeline.rb:41
+    200123  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:19
+    200075  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:29
+    200075  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:9
+    200070  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/monitor.rb:233
+    200070  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/monitor.rb:237
+    200063  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/ruby.rb:401
+    200000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/client.rb:239
+    200000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/middleware/chain.rb:136
+    200000  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb:159
+    100004  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis.rb:1384
+    100004  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-pro-5.0.1/lib/sidekiq/batch.rb:305
+    100004  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/json/common.rb:212
+    100001  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb:106
+    100001  /Users/iiwo/src/oneoff/memory_bloat_script/test_mem.rb:49
+    100000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis.rb:1136
+    100000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/client.rb:203
+    100000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/client.rb:204
+    100000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/client.rb:209
+    100000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/client.rb:213
+    100000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/client.rb:237
+    100000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/client.rb:242
+    100000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/client.rb:74
+    100000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/middleware/chain.rb:125
+    100000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/middleware/chain.rb:135
+    100000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/middleware/chain.rb:156
+    100000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/worker.rb:200
+    100000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/worker.rb:239
+    100000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/worker.rb:243
+       588  /Users/iiwo/src/oneoff/memory_bloat_script/test_mem.rb:74
+       210  <internal:prelude>:73
+        84  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/csv/writer.rb:40
+        42  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/csv/writer.rb:145
+        42  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/csv/writer.rb:37
+        42  /Users/iiwo/src/oneoff/memory_bloat_script/test_mem.rb:75
+        40  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/pipeline.rb:121
+        30  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/ruby.rb:94
+        28  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/connection_pool-2.2.3/lib/connection_pool.rb:59
+        28  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/ruby.rb:36
+        26  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/connection_pool-2.2.3/lib/connection_pool.rb:62
+        24  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/pipeline.rb:113
+        16  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/pipeline.rb:76
+        15  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis.rb:426
+        14  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/connection_pool-2.2.3/lib/connection_pool/timed_stack.rb:63
+
+allocated objects by class
+-----------------------------------
+   6701640  String
+   1300599  Array
+    600298  Hash
+    300016  Proc
+    200053  Redis::Future
+    200010  Time
+    100004  JSON::Ext::Generator::State
+    100001  Sidekiq::Client
+    100000  Sidekiq::Batch::Client
+        42  MatchData
+        42  Process::Status
+        14  Enumerator
+        11  Range
+         8  Redis::Pipeline::Multi
+         2  Redis::Pipeline
+         2  Sidekiq::ProcessSet
+         1  ConnectionPool::TimeoutError
+         1  Sidekiq::Batch
+         1  Thread::Backtrace
+
+retained memory by gem
+-----------------------------------
+   2044574  sidekiq-pro-5.0.1
+     36120  sidekiq-6.0.5
+      5484  redis-4.2.5
+      4168  securerandom
+      1968  connection_pool-2.2.3
+      1640  other
+      1152  monitor
+      1020  json
+
+retained memory by file
+-----------------------------------
+   2044574  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-pro-5.0.1/lib/sidekiq/batch.rb
+     16624  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/client.rb
+     10296  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/worker.rb
+      9200  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/middleware/chain.rb
+      4168  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb
+      3116  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb
+      1560  /Users/iiwo/src/oneoff/memory_bloat_script/test_mem.rb
+      1504  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/connection_pool-2.2.3/lib/connection_pool.rb
+      1152  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/monitor.rb
+      1080  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/ruby.rb
+      1064  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/pipeline.rb
+      1020  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/json/common.rb
+       464  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/connection_pool-2.2.3/lib/connection_pool/timed_stack.rb
+       152  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis.rb
+        80  <internal:prelude>
+        72  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/client.rb
+
+retained memory by location
+-----------------------------------
+   1021592  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-pro-5.0.1/lib/sidekiq/batch.rb:197
+   1021592  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-pro-5.0.1/lib/sidekiq/batch.rb:227
+      7656  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/worker.rb:200
+      7424  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/client.rb:237
+      5280  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/middleware/chain.rb:136
+      3096  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/client.rb:242
+      2680  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb:159
+      2560  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/client.rb:239
+      2304  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/client.rb:213
+      1440  /Users/iiwo/src/oneoff/memory_bloat_script/test_mem.rb:49
+      1360  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/worker.rb:243
+      1320  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/middleware/chain.rb:125
+      1320  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/middleware/chain.rb:156
+      1280  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/middleware/chain.rb:135
+      1280  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/worker.rb:239
+      1280  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb:106
+      1240  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/client.rb:74
+      1000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:20
+       848  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/connection_pool-2.2.3/lib/connection_pool.rb:59
+       800  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:9
+       796  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/json/common.rb:224
+       716  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:29
+       576  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/monitor.rb:233
+       576  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/monitor.rb:237
+       440  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/ruby.rb:379
+       440  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/ruby.rb:48
+       424  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/connection_pool-2.2.3/lib/connection_pool.rb:62
+       320  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:25
+       280  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:19
+       232  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/connection_pool-2.2.3/lib/connection_pool.rb:58
+       232  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/connection_pool-2.2.3/lib/connection_pool/timed_stack.rb:41
+       232  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/connection_pool-2.2.3/lib/connection_pool/timed_stack.rb:63
+       232  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-pro-5.0.1/lib/sidekiq/batch.rb:177
+       232  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-pro-5.0.1/lib/sidekiq/batch.rb:184
+       232  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-pro-5.0.1/lib/sidekiq/batch.rb:305
+       232  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-pro-5.0.1/lib/sidekiq/batch.rb:95
+       224  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/json/common.rb:212
+       208  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb:214
+       200  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/pipeline.rb:115
+       168  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/pipeline.rb:76
+       160  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/ruby.rb:401
+       160  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/pipeline.rb:121
+       144  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/pipeline.rb:41
+       120  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/pipeline.rb:113
+       120  /Users/iiwo/src/oneoff/memory_bloat_script/test_mem.rb:37
+        88  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-pro-5.0.1/lib/sidekiq/batch.rb:202
+        88  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-pro-5.0.1/lib/sidekiq/batch.rb:218
+        86  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-pro-5.0.1/lib/sidekiq/batch.rb:94
+        80  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/pipeline.rb:75
+        80  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-pro-5.0.1/lib/sidekiq/batch.rb:196
+
+retained memory by class
+-----------------------------------
+   2055368  Array
+     19360  Hash
+      9368  String
+      5440  Proc
+      3182  Time
+      1360  Sidekiq::Client
+      1320  Sidekiq::Batch::Client
+       224  JSON::Ext::Generator::State
+       144  Redis::Future
+       128  Enumerator
+       120  Sidekiq::Batch
+        72  Redis::Pipeline::Multi
+        40  Range
+
+retained objects by gem
+-----------------------------------
+       458  sidekiq-6.0.5
+       101  securerandom
+        96  redis-4.2.5
+        39  other
+        13  sidekiq-pro-5.0.1
+        11  json
+         9  connection_pool-2.2.3
+         6  monitor
+
+retained objects by file
+-----------------------------------
+       195  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/client.rb
+       164  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/middleware/chain.rb
+       101  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb
+        99  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/worker.rb
+        48  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb
+        37  /Users/iiwo/src/oneoff/memory_bloat_script/test_mem.rb
+        27  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/ruby.rb
+        17  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/pipeline.rb
+        13  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-pro-5.0.1/lib/sidekiq/batch.rb
+        11  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/json/common.rb
+         7  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/connection_pool-2.2.3/lib/connection_pool.rb
+         6  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/monitor.rb
+         3  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis.rb
+         2  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/connection_pool-2.2.3/lib/connection_pool/timed_stack.rb
+         2  <internal:prelude>
+         1  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/client.rb
+
+retained objects by location
+-----------------------------------
+        67  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb:159
+        66  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/middleware/chain.rb:136
+        64  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/client.rb:239
+        36  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/client.rb:242
+        36  /Users/iiwo/src/oneoff/memory_bloat_script/test_mem.rb:49
+        34  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/worker.rb:243
+        33  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/middleware/chain.rb:125
+        33  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/middleware/chain.rb:156
+        33  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/worker.rb:200
+        32  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/client.rb:213
+        32  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/client.rb:237
+        32  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/middleware/chain.rb:135
+        32  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/worker.rb:239
+        32  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb:106
+        31  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/client.rb:74
+        25  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:20
+        11  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/ruby.rb:379
+        11  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/ruby.rb:48
+        10  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/json/common.rb:224
+         8  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:25
+         7  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:19
+         4  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/connection_pool-2.2.3/lib/connection_pool.rb:59
+         4  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:29
+         4  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:9
+         4  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/ruby.rb:401
+         4  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/pipeline.rb:121
+         3  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/pipeline.rb:113
+         3  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/monitor.rb:233
+         3  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/monitor.rb:237
+         2  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/connection_pool-2.2.3/lib/connection_pool.rb:62
+         2  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/pipeline.rb:41
+         2  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/pipeline.rb:76
+         2  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb:214
+         2  <internal:prelude>:73
+         1  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/connection_pool-2.2.3/lib/connection_pool.rb:58
+         1  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/connection_pool-2.2.3/lib/connection_pool/timed_stack.rb:41
+         1  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/connection_pool-2.2.3/lib/connection_pool/timed_stack.rb:63
+         1  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis.rb:2166
+         1  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis.rb:2488
+         1  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis.rb:426
+         1  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/client.rb:197
+         1  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/ruby.rb:421
+         1  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/pipeline.rb:115
+         1  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/pipeline.rb:123
+         1  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/pipeline.rb:14
+         1  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/pipeline.rb:58
+         1  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/pipeline.rb:62
+         1  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/pipeline.rb:75
+         1  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-pro-5.0.1/lib/sidekiq/batch.rb:177
+         1  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-pro-5.0.1/lib/sidekiq/batch.rb:179
+
+retained objects by class
+-----------------------------------
+       257  Array
+       212  String
+        85  Hash
+        68  Proc
+        37  Time
+        34  Sidekiq::Client
+        33  Sidekiq::Batch::Client
+         2  Redis::Future
+         1  Enumerator
+         1  JSON::Ext::Generator::State
+         1  Range
+         1  Redis::Pipeline::Multi
+         1  Sidekiq::Batch
+
+
+Allocated String Report
+-----------------------------------
+    800277  ""
+    400132  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/ruby.rb:379
+    400132  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/ruby.rb:48
+        12  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/ruby.rb:36
+         1  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:19
+
+    300000  "AtomicJob"
+    200000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/client.rb:239
+    100000  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/json/common.rb:224
+
+    200063  "+"
+    200063  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/ruby.rb:379
+
+    200051  "QUEUED"
+    200051  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/ruby.rb:401
+
+    200051  "QUEUED\r\n"
+    200051  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/ruby.rb:48
+
+    200046  ":"
+    200046  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/ruby.rb:379
+
+    200037  "3"
+    200034  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:25
+         2  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:20
+         1  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/time.rb:724
+
+    200034  "*3"
+    200034  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:25
+
+    200001  "fgwN1heSDhgmDg"
+    200000  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/json/common.rb:224
+         1  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb:214
+
+    100042  "4"
+    100035  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:20
+         7  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:25
+
+    100035  "$4"
+    100035  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:20
+
+    100035  "$6"
+    100035  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:20
+
+    100035  "6"
+    100035  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:20
+
+    100027  "$5"
+    100027  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:20
+
+    100027  "5"
+    100027  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:20
+
+    100019  "0\r\n"
+    100019  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/ruby.rb:48
+
+    100006  "$16"
+    100006  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:20
+
+    100006  "16"
+    100006  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:20
+
+    100006  "queue"
+    100006  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/json/common.rb:224
+
+    100004  "10"
+    100001  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:20
+         3  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:25
+
+    100004  "sadd"
+    100004  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:19
+
+    100003  "test_queue"
+    100003  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/json/common.rb:224
+
+    100001  "$10"
+    100001  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:20
+
+    100001  "class"
+    100000  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/json/common.rb:224
+         1  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/logger.rb:129
+
+    100001  "jid"
+    100000  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/json/common.rb:224
+         1  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/logger.rb:129
+
+    100000  "$24"
+    100000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:15
+
+    100000  "*3\r\n$4\r\nsadd\r\n$6\r\nqueues\r\n$10\r\ntest_queue\r\n"
+    100000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:29
+
+    100000  "24"
+    100000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:15
+
+    100000  "args"
+    100000  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/json/common.rb:224
+
+    100000  "bid"
+    100000  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/json/common.rb:224
+
+    100000  "created_at"
+    100000  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/json/common.rb:224
+
+    100000  "enqueued_at"
+    100000  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/json/common.rb:224
+
+    100000  "lpush"
+    100000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:19
+
+    100000  "queue:test_queue"
+    100000  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/client.rb:209
+
+    100000  "retry"
+    100000  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/json/common.rb:224
+
+     45400  "$186"
+     45400  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:15
+
+     45400  "186"
+     45400  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:15
+
+     32346  "$187"
+     32346  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:15
+
+     32346  "187"
+     32346  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:15
+
+     12826  "$185"
+     12826  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:15
+
+     12826  "185"
+     12826  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:15
+
+      6528  "$188"
+      6528  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:15
+
+      6528  "188"
+      6528  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:15
+
+      2452  "$184"
+      2449  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:15
+         3  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:20
+
+      2452  "184"
+      2449  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:15
+         3  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:20
+
+       383  "$183"
+       383  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:15
+
+       383  "183"
+       383  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:15
+
+        58  "$182"
+        58  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:15
+
+        58  "182"
+        58  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:15
+
+        44  "1"
+        19  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:20
+        16  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:25
+         6  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/launcher.rb:18
+         3  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:19
+
+
+Retained String Report
+-----------------------------------
+        64  "AtomicJob"
+        64  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-6.0.5/lib/sidekiq/client.rb:239
+
+        12  ""
+         6  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/ruby.rb:48
+         5  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/ruby.rb:379
+         1  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:19
+
+         4  "+"
+         4  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/ruby.rb:379
+
+         3  "5"
+         3  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:20
+
+         3  "BatchJob::BatchCallback"
+         3  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/json/common.rb:224
+
+         2  "$16"
+         2  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:20
+
+         2  "$5"
+         2  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:20
+
+         2  "*1"
+         2  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:25
+
+         2  "1"
+         2  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:25
+
+         2  "16"
+         2  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/command_helper.rb:20
+
+         2  "OK"
+         2  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/ruby.rb:401
+
+         2  "OK\r\n"
+         2  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/ruby.rb:48
+
+         2  "QUEUED"
+         2  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/ruby.rb:401
+
+         2  "QUEUED\r\n"
+         2  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/redis-4.2.5/lib/redis/connection/ruby.rb:48
+
+         2  "complete"
+         1  /Users/iiwo/.rvm/gems/ruby-2.6.6/gems/sidekiq-pro-5.0.1/lib/sidekiq/batch.rb:179
+         1  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/json/common.rb:224
+
+         1  "\x02t\xC9\xD3\xB6\xFE\x15]\xF4\xC5\xBC\xED"
+         1  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb:106
+
+         1  "\x03\xA0\xA8\xFEW\xBB\xC1ol\xB3-\xF5"
+         1  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb:106
+
+         1  "-H\xC7\x8F\xC1m4\xA1\xB4\xDA\x8F{"
+         1  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb:106
+
+         1  "0274c9d3b6fe155df4c5bced"
+         1  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb:159
+
+         1  "2d48c78fc16d34a1b4da8f7b"
+         1  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb:159
+
+         1  "4df0a8bab025282da217dd9e"
+         1  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb:159
+
+         1  "4fb6c5ee8b8cfafb393e7d24"
+         1  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb:159
+
+         1  "5025cd138ed4fcc5b54ae85f"
+         1  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb:159
+
+         1  "52a1351b8ca8cf324dc298da"
+         1  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb:159
+
+         1  "5cfa429bfd8ec4ee1f99f5e4"
+         1  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb:159
+
+         1  "610a5a78341b52b9b0a04728"
+         1  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb:159
+
+         1  "644bebf296cb0c002d90cf4c"
+         1  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb:159
+
+         1  "6cb0826dd73daaf0764451d2"
+         1  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb:159
+
+         1  "700c9895863d60a7337a519a"
+         1  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb:159
+
+         1  "722eeab93d9456d982089afc"
+         1  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb:159
+
+         1  "85670e850c56783c74200701"
+         1  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb:159
+
+         1  "85db254cd6b9b4ee704e52b6"
+         1  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb:159
+
+         1  "989a0c57e5dac40b53b6c607"
+         1  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb:159
+
+         1  "9d824899083f28de3dc938e0"
+         1  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb:159
+
+         1  "M\xF0\xA8\xBA\xB0%(-\xA2\x17\xDD\x9E"
+         1  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb:106
+
+         1  "O\xB6\xC5\xEE\x8B\x8C\xFA\xFB9>}$"
+         1  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb:106
+
+         1  "R\xA15\e\x8C\xA8\xCF2M\xC2\x98\xDA"
+         1  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb:106
+
+         1  "\\\xFAB\x9B\xFD\x8E\xC4\xEE\x1F\x99\xF5\xE4"
+         1  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb:106
+
+         1  "a\nZx4\eR\xB9\xB0\xA0G("
+         1  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb:106
+
+         1  "c19844e5aebdcf69c5ea1301"
+         1  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb:159
+
+         1  "dd00540c6d840dca4e5a85b0"
+         1  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb:159
+
+         1  "eb6e744b8822a329c8dc174d"
+         1  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb:159
+
+         1  "l\xB0\x82m\xD7=\xAA\xF0vDQ\xD2"
+         1  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb:106
+
+         1  "p\f\x98\x95\x86=`\xA73zQ\x9A"
+         1  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb:106
+
+         1  "r.\xEA\xB9=\x94V\xD9\x82\b\x9A\xFC"
+         1  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb:106
+
+         1  "\x85\xDB%L\xD6\xB9\xB4\xEEpNR\xB6"
+         1  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb:106
+
+         1  "\x98\x9A\fW\xE5\xDA\xC4\vS\xB6\xC6\a"
+         1  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb:106
+
+         1  "\x9D\x82H\x99\b?(\xDE=\xC98\xE0"
+         1  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb:106
+
+         1  "\xDD\x00T\fm\x84\r\xCANZ\x85\xB0"
+         1  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb:106
+
+         1  "\xEBntK\x88\"\xA3)\xC8\xDC\x17M"
+         1  /Users/iiwo/.rvm/rubies/ruby-2.6.6/lib/ruby/2.6.0/securerandom.rb:106
+
