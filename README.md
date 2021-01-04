@@ -24,7 +24,7 @@ batch = Sidekiq::Batch.new
 end
 ```
 
-##### AFTER (using bulk)
+#### AFTER (using bulk)
 ```ruby
 batch = Sidekiq::Batch.new
 batch.jobs do
