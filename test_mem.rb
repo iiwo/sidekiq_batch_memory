@@ -39,7 +39,7 @@ class BatchJob
       #   Sidekiq::Client.push_bulk('class' => AtomicJob, 'args' => account_id_batch)
       # end
 
-      # BATCH (atomic)
+      # BEFORE (atomic)
       #
       (1..NUMBER_OF_JOBS).each do |account_id|
         AtomicJob.perform_async(account_id)
