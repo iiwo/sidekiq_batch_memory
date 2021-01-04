@@ -24,8 +24,10 @@ MEMORY_PROFILER=true NUMBER_OF_JOBS=100000 bundle exec sidekiq -c 1 -r ./test_me
 #### BEFORE (atomic)
 ```ruby
 batch = Sidekiq::Batch.new
-(1..100_000).each do |account_id|
-  AtomicJob.perform_async(account_id)
+batch.jobs do
+  (1..100_000).each do |account_id|
+    AtomicJob.perform_async(account_id)
+  end
 end
 ```
 
