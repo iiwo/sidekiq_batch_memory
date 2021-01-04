@@ -34,16 +34,16 @@ class BatchJob
     batch.jobs do
       # AFTER (using bulk)
       #
-      # (1..NUMBER_OF_JOBS).to_a.each_slice(1000) do |batch|
-      #   account_id_batch = batch.map {|id| [id] }
-      #   Sidekiq::Client.push_bulk('class' => AtomicJob, 'args' => account_id_batch)
-      # end
+      (1..NUMBER_OF_JOBS).to_a.each_slice(1000) do |batch|
+        account_id_batch = batch.map {|id| [id] }
+        Sidekiq::Client.push_bulk('class' => AtomicJob, 'args' => account_id_batch)
+      end
 
       # BEFORE (atomic)
       #
-      (1..NUMBER_OF_JOBS).each do |account_id|
-        AtomicJob.perform_async(account_id)
-      end
+      # (1..NUMBER_OF_JOBS).each do |account_id|
+      #   AtomicJob.perform_async(account_id)
+      # end
     end
   end
 end
@@ -51,30 +51,34 @@ end
 Sidekiq.redis(&:flushdb) # remove any junk
 Sidekiq.logger.level = Logger::DEBUG # set log level
 
-Sidekiq.configure_server do |config|
-  config.server_middleware do |chain|
-    chain.add SidekiqProfilingMiddleware::MemoryProfiler, output_prefix: "sidekiq_mem_", only: [BatchJob].to_set
+# enabling memory profiler will affect process memory
+if ENV['MEMORY_PROFILER']
+  Sidekiq.configure_server do |config|
+    config.server_middleware do |chain|
+      chain.add SidekiqProfilingMiddleware::MemoryProfiler, output_prefix: "sidekiq_mem_", only: [BatchJob].to_set
+    end
   end
 end
 
 # system memory profiling
-Thread.new do
-  require 'csv'
+if ENV['SYSTEM_MEMORY']
+  Thread.new do
+    require 'csv'
 
-  Dir.mkdir(save_to) rescue true
-  file = "#{ENV['FILE_NAME'] || 'sidekiq_mem'}.csv"
+    Dir.mkdir(save_to) rescue true
+    file = "#{ENV['FILE_NAME'] || 'sidekiq_mem'}.csv"
 
-  CSV.open(file, 'wb') do |csv|
-    while true do
-      rsize, _name = `ps ax -o rss,command | grep -E "[s]idekiq(.+)of 1 busy]"`.split(/\n/).map{ |p| p.split(' ', 2) }.sort_by{|a| a[0].to_i}.last
-      csv << [rsize.to_i]
-      sleep(0.2)
-      Thread.pass
+    CSV.open(file, 'wb') do |csv|
+      while true do
+        rsize, _name = `ps ax -o rss,command | grep -E "[s]idekiq(.+)of 1 busy]"`.split(/\n/).map{ |p| p.split(' ', 2) }.sort_by{|a| a[0].to_i}.last
+        csv << [rsize.to_i]
+        sleep(0.2)
+        Thread.pass
+      end
+      Thread.exit
     end
-    Thread.exit
   end
 end
 
 sleep(1) # wait a moment for system memory values
 BatchJob.perform_at(Time.now) # run batch job
-Redis.exists_returns_integer = false # prevent warnings
