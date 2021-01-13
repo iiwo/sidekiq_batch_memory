@@ -1,3 +1,5 @@
+require 'active_job'
+require 'active_job/queue_adapters/sidekiq_adapter'
 require 'sidekiq'
 require "sidekiq/pro/worker"
 require 'sidekiq/pro/api'
@@ -13,7 +15,18 @@ class AtomicJob
   sidekiq_options queue: 'test_queue', retry: 0
 
   def perform(account_id)
-    #raise 'test error' if account_id.to_s == '49999' # simulate error if needed
+    #puts "RUNNING JOB: #{account_id}"
+    #raise 'test error' if account_id.to_s == '3' # simulate error if needed
+  end
+end
+
+class AtomicJobAJ < ActiveJob::Base
+  self.queue_adapter = :sidekiq
+  queue_as 'test_queue'
+
+  def perform(account_id:)
+    #puts "RUNNING JOB: #{account_id}"
+    #raise 'test error' if account_id.to_s == '3' # simulate error if needed
   end
 end
 
@@ -32,30 +45,35 @@ class BatchJob
     batch = Sidekiq::Batch.new
     batch.on(:complete, BatchCallback)
     batch.jobs do
-      # AFTER (using bulk)
-      #
-      (1..NUMBER_OF_JOBS).to_a.each_slice(1000) do |batch|
-        account_id_batch = batch.map {|id| [id] }
-        Sidekiq::Client.push_bulk('class' => AtomicJob, 'args' => account_id_batch)
+      if ENV['PUSH_BULK']
+        puts 'USING BULK PUSH'
+        (1..NUMBER_OF_JOBS).to_a.each_slice(1000) do |batch|
+          account_id_batch = batch.map {|id| [id] }
+          Sidekiq::Client.push_bulk('class' => AtomicJob, 'args' => account_id_batch)
+        end
+      elsif ENV['INDIVIDUAL_AJ']
+        puts 'USING AJ INDIVIDUAL PUSH'
+        (1..NUMBER_OF_JOBS).each do |account_id|
+          AtomicJobAJ.perform_later(account_id: account_id)
+        end
+      else
+        puts 'USING INDIVIDUAL PUSH'
+        (1..NUMBER_OF_JOBS).each do |account_id|
+          AtomicJob.perform_async(account_id)
+        end
       end
-
-      # BEFORE (atomic)
-      #
-      # (1..NUMBER_OF_JOBS).each do |account_id|
-      #   AtomicJob.perform_async(account_id)
-      # end
     end
   end
 end
 
 Sidekiq.redis(&:flushdb) # remove any junk
-Sidekiq.logger.level = Logger::DEBUG # set log level
+Sidekiq.logger.level = Logger::INFO # set log level
 
 # enabling memory profiler will affect process memory
 if ENV['MEMORY_PROFILER']
   Sidekiq.configure_server do |config|
     config.server_middleware do |chain|
-      chain.add SidekiqProfilingMiddleware::MemoryProfiler, output_prefix: "sidekiq_mem_", only: [BatchJob].to_set
+      chain.add SidekiqProfilingMiddleware::MemoryProfiler, output_prefix: "aj_sidekiq_mem_", only: [BatchJob].to_set
     end
   end
 end
