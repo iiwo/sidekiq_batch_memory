@@ -10,7 +10,7 @@ NUMBER_OF_JOBS = (ENV['NUMBER_OF_JOBS'] || 50_000).to_i
 
 class AtomicJob
   include Sidekiq::Worker
-  sidekiq_options queue: 'test_queue', retry: 0
+  sidekiq_options queue: 'dont_execute', retry: 0
 
   def perform(account_id)
     #raise 'test error' if account_id.to_s == '49999' # simulate error if needed
@@ -22,28 +22,38 @@ class BatchJob
   sidekiq_options queue: 'test_queue', retry: 0
 
   class BatchCallback
-    def on_complete(status, options)
+    def on_complete(_status, _options)
       puts "FINISHED ALL JOBS: running garbage collection"
       GC.start # force garbage collection after finish
     end
   end
 
-  def perform
+  def perform(variant = ENV['VARIANT'])
     batch = Sidekiq::Batch.new
     batch.on(:complete, BatchCallback)
-    batch.jobs do
-      # AFTER (using bulk)
-      #
-      (1..NUMBER_OF_JOBS).to_a.each_slice(1000) do |batch|
-        account_id_batch = batch.map {|id| [id] }
-        Sidekiq::Client.push_bulk('class' => AtomicJob, 'args' => account_id_batch)
-      end
 
-      # BEFORE (atomic)
-      #
-      # (1..NUMBER_OF_JOBS).each do |account_id|
-      #   AtomicJob.perform_async(account_id)
-      # end
+    batch.jobs do
+      case variant
+        when 'with_push_bulk'
+          (1..NUMBER_OF_JOBS).to_a.each_slice(1000) do |batch|
+            account_id_batch = batch.map {|id| [id] }
+            Sidekiq::Client.push_bulk('class' => AtomicJob, 'args' => account_id_batch)
+          end
+
+        when 'with_sub_batches'
+          (1..NUMBER_OF_JOBS).to_a.each_slice(1000) do |batch_page|
+            sub_batch = Sidekiq::Batch.new
+            sub_batch.jobs do
+              account_id_batch = batch_page.map {|id| [id] }
+              Sidekiq::Client.push_bulk('class' => AtomicJob, 'args' => account_id_batch)
+            end
+          end
+
+        else
+          (1..NUMBER_OF_JOBS).each do |account_id|
+            AtomicJob.perform_async(account_id)
+          end
+      end
     end
   end
 end
