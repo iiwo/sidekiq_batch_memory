@@ -1,84 +1,77 @@
 require 'sidekiq'
-require "sidekiq/pro/worker"
-require 'sidekiq/pro/api'
-require "sidekiq/pro/push"
-require "sidekiq/pro/metrics"
-require 'sidekiq/batch'
-require 'sidekiq_profiling_middleware/memory_profiler'
+require 'sidekiq-unique-jobs'
 
 NUMBER_OF_JOBS = (ENV['NUMBER_OF_JOBS'] || 50_000).to_i
 
-class AtomicJob
+class TestJob
   include Sidekiq::Worker
-  sidekiq_options queue: 'test_queue', retry: 0
-
-  def perform(account_id)
-    #raise 'test error' if account_id.to_s == '49999' # simulate error if needed
-  end
-end
-
-class BatchJob
-  include Sidekiq::Worker
-  sidekiq_options queue: 'test_queue', retry: 0
-
-  class BatchCallback
-    def on_complete(status, options)
-      puts "FINISHED ALL JOBS: running garbage collection"
-      GC.start # force garbage collection after finish
-    end
+  if ENV['WITH_UNIQUE']
+    sidekiq_options queue: 'test_queue', lock: :until_executed, on_conflict: nil
+  else
+    sidekiq_options queue: 'test_queue'
   end
 
-  def perform
-    batch = Sidekiq::Batch.new
-    batch.on(:complete, BatchCallback)
-    batch.jobs do
-      # AFTER (using bulk)
-      #
-      (1..NUMBER_OF_JOBS).to_a.each_slice(1000) do |batch|
-        account_id_batch = batch.map {|id| [id] }
-        Sidekiq::Client.push_bulk('class' => AtomicJob, 'args' => account_id_batch)
-      end
-
-      # BEFORE (atomic)
-      #
-      # (1..NUMBER_OF_JOBS).each do |account_id|
-      #   AtomicJob.perform_async(account_id)
-      # end
-    end
+  def perform(_identifier)
+    sleep(0.1) # simulate job processing time
   end
 end
 
 Sidekiq.redis(&:flushdb) # remove any junk
 Sidekiq.logger.level = Logger::DEBUG # set log level
 
-# enabling memory profiler will affect process memory
-if ENV['MEMORY_PROFILER']
-  Sidekiq.configure_server do |config|
-    config.server_middleware do |chain|
-      chain.add SidekiqProfilingMiddleware::MemoryProfiler, output_prefix: "sidekiq_mem_", only: [BatchJob].to_set
-    end
+Sidekiq.configure_server do |config|
+  config.server_middleware do |chain|
+    chain.add SidekiqUniqueJobs::Middleware::Server
+  end
+
+  config.client_middleware do |chain|
+    chain.add SidekiqUniqueJobs::Middleware::Client
   end
 end
 
-# system memory profiling
-if ENV['SYSTEM_MEMORY']
-  Thread.new do
-    require 'csv'
-
-    Dir.mkdir(save_to) rescue true
-    file = "#{ENV['FILE_NAME'] || 'sidekiq_mem'}.csv"
-
-    CSV.open(file, 'wb') do |csv|
-      while true do
-        rsize, _name = `ps ax -o rss,command | grep -E "[s]idekiq(.+)of 1 busy]"`.split(/\n/).map{ |p| p.split(' ', 2) }.sort_by{|a| a[0].to_i}.last
-        csv << [rsize.to_i]
-        sleep(0.2)
-        Thread.pass
-      end
-      Thread.exit
-    end
+Sidekiq.configure_client do |config|
+  config.client_middleware do |chain|
+    chain.add SidekiqUniqueJobs::Middleware::Client
   end
 end
 
-sleep(1) # wait a moment for system memory values
-BatchJob.perform_at(Time.now) # run batch job
+# profiling
+Thread.new do
+  require 'csv'
+
+  Dir.mkdir(save_to) rescue true
+  file = ENV['FILE_NAME'] || 'redis_stats.csv'
+
+  CSV.open(file, 'wb') do |csv|
+    info = Sidekiq.redis(&:info)
+    csv << ['time', 'locks count', 'jobs count'] + info.keys
+    while true do
+      info = Sidekiq.redis(&:info)
+      locks_count, _a, _b = SidekiqUniqueJobs::Digests.new.page
+      jobs_count = Sidekiq::Queue.new('test_queue').count
+      csv << [Time.now.to_i, locks_count, jobs_count] + info.values
+      sleep(0.2)
+      Thread.pass
+    end
+    Thread.exit
+  end
+end
+
+sleep(1) # wait a moment
+
+total = (ENV['TOTAL'] || 10_000).to_i
+ratio = (ENV['RATIO'] || 0.1).to_f
+
+raise 'ratio must be 0..1' unless (0..1).cover?(ratio)
+
+max = (1 - ratio) * total
+max = max < 1 ? 1 : max
+sum = 0
+
+(total/max).ceil.times do
+  count = [max, total - sum].min
+  sum += count
+  (1..count).to_a.each do |identifier|
+    TestJob.perform_async(identifier)
+  end
+end
