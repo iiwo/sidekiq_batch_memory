@@ -18,5 +18,7 @@ run sidekiq test script
 bundle exec sidekiq -c 2 -r ./test_sidekiq.rb -q test_queue
 ```
 
+![image](./log_output.png)
+
 ### Links
 - https://github.com/mhenrixon/sidekiq-unique-jobs
